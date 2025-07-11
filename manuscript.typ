@@ -20,109 +20,39 @@ Water vapor is the most abundant greenhouse gas and plays a critical role in Ear
 = Introduction
 <introduction>
 
-
-
-
-1. *Insufficient problem statement*: The introduction fails to explicitly articulate what scientific gap this research addresses. You mention asymmetric fluctuations in TCWV similar to temperature in your description, but this key finding is absent from the actual introduction text.
-
-2. *Disconnected conceptual framework*: The link between nonequilibrium statistical physics and your specific analyses of TCWV, vertical wind, and precipitation isn't adequately developed. The theoretical foundation needs strengthening.
-
-3. *Underdeveloped research significance*: While you mention analyzing TCWV fluctuations, you don't explain why understanding these fluctuations is important for climate science or how they relate to broader climate dynamics.
-
-4. *Missing methodological justification*: The introduction mentions using copula functions and PDF-based approaches without explaining why these methods are particularly suitable for your research questions.
-
-== Minor Issues
-
-1. *Timeline inconsistency*: You mention ERA5 data spanning 85 years (1940-2024), but ERA5 officially covers 1940-present for the back-extension and 1979-present for the main product.
-
-2. *Reference integration*: Citations appear tacked on rather than integrated into the narrative flow.
-
-3. *Terminology clarity*: Terms like "fluctuation theorem" and "delta anomalies" are used without sufficient explanation for readers unfamiliar with nonequilibrium physics.
-
-== Specific Revision Suggestions
-
-
-== Suggested Additional References
-
-1. Sherwood, S. C., et al. (2010). "Relative humidity changes in a warmer climate." Journal of Geophysical Research: Atmospheres, 115(D9). [For thermodynamic constraints on water vapor]
-
-
-6. Allan, R. P., & Soden, B. J. (2008). "Atmospheric warming and the amplification of precipitation extremes." Science, 321(5895), 1481-1484. [For observed changes in precipitation and relation to water vapor]
-
-7. Seager, R., & Henderson, N. (2013). "Diagnostic computation of moisture budgets in the ERA-Interim reanalysis with reference to analysis of CMIP-archived atmospheric model data." Journal of Climate, 26(20), 7876-7901. [For methodology on moisture budget analysis]
-ate system.
-
-
-#pagebreak()
 //背景 → 非对称性引入 → 理论演进 → 关键变量 → 数据方法 → 研究问题 → 意义
 
-
-
-明确提出研究问题、创新点和意义
 //研究背景与科学问题引出
 Earth's climate system operates far from thermodynamic equilibrium, driven by differential solar heating and complex energy transfer processes @kleidon2016thermodynamic. Within this nonequilibrium framework, atmospheric water plays a crucial role, transitioning between phases and redistributing energy through latent heat exchanges @marconi_fluctuationdissipation_2008.
 //温度-降水关系理论演化（热力学→动力学→非平衡统计物理）
 Recent theoretical advances in nonequilibrium statistical physics have provided new tools to analyze climate variables, revealing signatures of underlying physical principles that govern climate fluctuations beyond simple mean values and linear correlations @yin_nonequilibrium_2024. 
 
-
-// Asymmetric Climate Fluctuations and Their Significance 非对称性的新发现及其对理论的挑战
-
-A growing body of evidence demonstrates that climate fluctuations exhibit pronounced asymmetry across multiple variables and timescales. Temperature distributions, in particular, show marked skewness in their probability density functions (PDFs), with different characteristics for warming versus cooling episodes (Ruff and Neelin, 2012; Loikith and Neelin, 2019). These asymmetries reflect fundamental properties of the climate system's response to perturbations and suggest that similar nonlinear behaviors may characterize water vapor dynamics. Recent studies have demonstrated that conventional equilibrium-based frameworks fail to capture these asymmetric responses, particularly during extreme events and rapid transitions (Lucarini et al., 2020).
-
 // Evolution of Temperature-Precipitation Understanding: From Thermodynamics to Dynamics 
+The conceptual understanding of temperature-precipitation relationships has evolved considerably over recent decades. #cite(<allen2002constraints>,form: "author")  first systematically established that global precipitation changes are primarily constrained by atmospheric energetics rather than simple moisture availability. Building on this foundation, #cite(<held2006robust>,form: "author") introduced the influential "wet-gets-wetter" mechanism, demonstrating how increased water vapor content under warming conditions intensifies existing precipitation patterns. The initial thermodynamic perspective—based primarily on Clausius-Clapeyron scaling—gradually expanded as #cite(<o2009physical>,form: "author",) demonstrated that precipitation extremes depend on complex interactions between temperature lapse rates, upward velocities, and temperature distributions during extreme events.
 
-The conceptual understanding of temperature-precipitation relationships has evolved considerably over recent decades. Allen and Ingram (2002) first systematically analyzed the fundamental theoretical constraints governing how temperature influences precipitation, establishing that global precipitation changes are primarily constrained by atmospheric energetics rather than simple moisture availability. This foundational work recognized the limitations of purely thermodynamic approaches and emphasized the importance of energy balance considerations.
+// Asymmetric Climate Fluctuations and Their Significance 
+Despite these advances, a growing body of evidence demonstrates that climate fluctuations exhibit pronounced asymmetry that conventional equilibrium-based frameworks fail to capture @yin_nonequilibrium_2024. Temperature and moisture distributions show marked skewness in their probability density functions (PDFs), with different characteristics for warming versus cooling episodes @ruff2012long. These asymmetries reflect fundamental properties of the climate system's response to perturbations and are particularly evident during extreme events and rapid transitions @lucarini2012universal.
 
-Building on this framework, Held and Soden (2006) introduced the influential "wet-gets-wetter" mechanism, demonstrating how increased lower-tropospheric water vapor content under warming conditions enhances horizontal moisture transport, intensifies existing precipitation patterns, and decreases convective mass fluxes. Their work identified robust hydrological cycle responses across climate models and established water vapor content as a critical link between temperature changes and precipitation responses.
-
-The initial thermodynamic perspective—based primarily on Clausius-Clapeyron scaling of atmospheric moisture with temperature—gradually gave way to more complex explanations. O'Gorman and Schneider (2009) demonstrated that precipitation extremes don't simply scale with atmospheric water vapor as would be expected from purely thermodynamic considerations @o2009physical. Their research revealed the critical importance of dynamic factors, showing that changes in precipitation extremes depend on complex interactions between temperature lapse rates, upward velocities, and temperature distributions during extreme events.
-
-This evolution toward integrating thermodynamic and dynamic perspectives has catalyzed new research directions @pendergrass_rain_2016(Pendergrass and Hartmann, 2014; Pendergrass et al., 2016), yet significant gaps remain in understanding how these interactions manifest in water vapor fluctuations across different climate regimes. Stephens et al. (2008) demonstrated that while global precipitation closely tracks atmospheric radiative energy loss, important and offsetting processes involving cloud radiative heating and sensible heat fluxes complicate this relationship in ways not fully captured by existing models @stephens2008controls.
 
 //Total Column Water Vapor: A Key Integrative Variable
+Total column water vapor (TCWV) represents an especially valuable variable for nonequilibrium analysis because it integrates both thermodynamic state (through Clausius-Clapeyron constraints) and dynamic processes (through atmospheric circulation patterns)  @held2006robust @o2010closely. By analyzing TCWV fluctuations, we can gain insights into how thermodynamic and dynamic processes jointly determine precipitation patterns across different climate regimes. 
+// Leveraging Modern Reanalysis for Novel Statistical Approaches
+The ERA5 reanalysis dataset, with its unprecedented temporal resolution and extended coverage (1940-2024), provides a unique opportunity to characterize the full probability distribution of water vapor fluctuations rather than just their mean behavior @era5_monthly_single_levels.
 
-Total column water vapor (TCWV) represents an especially valuable variable for nonequilibrium analysis because it integrates both thermodynamic state (through Clausius-Clapeyron constraints) and dynamic processes (through atmospheric circulation patterns). Recent observations have revealed asymmetric fluctuation patterns in TCWV that cannot be explained by equilibrium assumptions @held2006robust @o2010closely Muller, 2010). These asymmetries appear to be amplified during extreme events and may provide critical insights into precipitation variability that traditional mean-based analyses have overlooked.
-
-// Leveraging Modern Reanalysis for Novel Statistical Approaches数 据与方法简介
-The ERA5 reanalysis dataset from the European Centre for Medium-Range Weather Forecasts (ECMWF) provides unprecedented temporal resolution, spatial coverage, and physical consistency for studying atmospheric water vapor dynamics (Hersbach et al., 2020). Unlike previous reanalysis products, ERA5 incorporates advanced data assimilation techniques and improved model physics specifically designed to better represent hydrological processes. Its extended temporal coverage (1940-2024) enables robust statistical characterization of water vapor fluctuations across multiple climate regimes and teleconnection patterns, providing a unique opportunity to test nonequilibrium statistical theories against comprehensive observational data.
 
 //Research Questions and Approach
+This study addresses three central questions: 
+(1) How do probability density functions of TCWV fluctuations differ from those expected under equilibrium conditions? 
+(2) What is the relationship between asymmetric TCWV fluctuations and vertical velocity patterns across different precipitation regimes? 
+(3) How do these statistical properties vary across different climate regions and temporal scales? 
+We hypothesize that TCWV fluctuations will exhibit pronounced asymmetries consistent with nonequilibrium behavior, particularly during extreme precipitation events.
 
-This study addresses three central questions: (1) How do probability density functions (PDFs) of TCWV fluctuations differ from those expected under equilibrium conditions? (2) What is the relationship between asymmetric TCWV fluctuations and vertical velocity patterns? (3) How do these statistical properties vary across different climate regimes and temporal scales?
-
-We hypothesize that TCWV fluctuations will exhibit pronounced asymmetries consistent with nonequilibrium behavior, particularly during extreme precipitation events and rapid transitions. To test these hypotheses, we develop a PDF-based methodology to analyze TCWV fluctuations using ERA5 data spanning 85 years. Our approach focuses on delta anomalies—the difference between current and initial conditions—to characterize temporal evolution of climate statistics and identify universal scaling patterns across different climate regimes.
-
+To test these hypotheses, we develop a PDF-based methodology focusing on delta anomalies to characterize the temporal evolution of climate statistics. 
 //Implications for Climate Understanding and Modeling
-This study offers a novel nonequilibrium statistical framework for characterizing water vapor fluctuations, advancing our understanding of precipitation variability beyond traditional approaches. 
-By identifying universal scaling in water vapor statistics, we lay the foundation for improved stochastic parameterizations in climate models, with potential to mitigate longstanding biases in precipitation forecasts, especially for extremes. 
-Explicitly disentangling thermodynamic and dynamic contributions provides new perspectives on how climate change may reshape precipitation patterns through shifts in moisture availability and atmospheric circulation. 
-These insights are poised to enhance regional climate projections and deepen our fundamental understanding of the hydrological cycle under a changing climate.
+This approach allows us to identify universal scaling patterns while explicitly quantifying the relative contributions of thermodynamic and dynamic processes. By characterizing water vapor fluctuations from a nonequilibrium perspective, we provide a new framework that may help resolve persistent biases in precipitation forecasts, particularly for extreme events where equilibrium assumptions break down. Furthermore, by explicitly separating thermodynamic and dynamic contributions, our approach may provide new insights into how climate change will affect precipitation patterns through shifts in both moisture availability and atmospheric circulation, potentially enhancing our ability to represent the full spectrum of hydrological variability in a changing climate.
 
-Allen, M. R., & Ingram, W. J. (2002). Constraints on future changes in climate and the hydrologic cycle. Nature, 419(6903), 224-232.
 
-Held, I. M., & Soden, B. J. (2006). Robust responses of the hydrological cycle to global warming. Journal of Climate, 19(21), 5686-5699.
 
-Hersbach, H., Bell, B., Berrisford, P., et al. (2020). The ERA5 global reanalysis. Quarterly Journal of the Royal Meteorological Society, 146(730), 1999-2049.
-
-Loikith, P. C., & Neelin, J. D. (2019). Non-Gaussian temperature distribution tails and their relationship to warm extremes. Journal of Climate, 32(12), 3663-3680.
-
-Lucarini, V., Faranda, D., & Wouters, J. (2020). Universal behaviour of extreme value statistics for selected observables of dynamical systems. Journal of Statistical Physics, 176(6), 1550-1585.
-
-Marconi, U. M. B., Puglisi, A., Rondoni, L., & Vulpiani, A. (2008). Fluctuation-dissipation: response theory in statistical physics. Physics Reports, 461(4-6), 111-195.
-
-O'Gorman, P. A., & Muller, C. J. (2010). How closely do changes in surface and column water vapor follow Clausius-Clapeyron scaling in climate change simulations? Environmental Research Letters, 5(2), 025207.
-
-O'Gorman, P. A., & Schneider, T. (2009). The physical basis for increases in precipitation extremes in simulations of 21st-century climate change. Proceedings of the National Academy of Sciences, 106(35), 14773-14777.
-
-Pendergrass, A. G., & Hartmann, D. L. (2014). The atmospheric energy constraint on global-mean precipitation change. Journal of Climate, 27(2), 757-768.
-
-Pendergrass, A. G., Lehner, F., Sanderson, B. M., & Xu, Y. (2016). Does extreme precipitation intensity depend on the emissions scenario? Geophysical Research Letters, 42(20), 8767-8774.
-
-Ruff, T. W., & Neelin, J. D. (2012). Long tails in regional surface temperature probability distributions with implications for extremes under global warming. Geophysical Research Letters, 39(4), L04704.
-
-Stephens, G. L., Ellis, T. D., & Haynes, J. M. (2008). Controls on global-mean precipitation increases in global warming GCM experiments. Journal of Climate, 21(23), 6141-6155.
-
-Yin, J., Gentine, P., Feng, X., et al. (2024). Nonequilibrium signatures in temperature fluctuations. Nature Climate Change, 14, 179-187.
 
 
 = Materials and Methods
