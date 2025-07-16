@@ -1,0 +1,326 @@
+\documentclass{article}
+
+
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{natbib}
+\usepackage{amsmath} 
+\usepackage{float}
+
+
+
+\title{I had no idea on title yet}
+
+
+\author{
+ Kaihuai Deng \\
+  School of Hydrology and Water Resources\\
+  Nanjing University of Information Science \& Technology\\
+  Nanjing, China, 210044 \\
+  \texttt{202383300365@nuist.edu.cn} \\
+  %% examples of more authors
+   \And
+ Jun Yin \\
+  School of Hydrology and Water Resources\\
+  Nanjing University of Information Science \& Technology\\
+  Nanjing, China, 210044 \\
+  \texttt{jun.yin@nuist.edu.cn} \\
+  %% \AND
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+
+
+\end{abstract}
+
+
+% keywords can be removed
+%\keywords{First keyword \and Second keyword \and More}
+
+
+\section{Introduction}\label{introduction}
+
+% 背景 → 非对称性引入 → 理论演进 → 关键变量 → 数据方法 → 研究问题 → 意义
+
+% 研究背景与科学问题引出
+Earth's climate system operates far from thermodynamic equilibrium,
+driven by differential solar heating and complex energy transfer
+processes \cite{kleidon2016thermodynamic}. Within this nonequilibrium
+framework, atmospheric water plays a crucial role, transitioning between
+phases and redistributing energy through latent heat exchanges
+\cite{marconi_fluctuationdissipation_2008}. 
+% 温度-降水关系理论演化（热力学→动力学→非平衡统计物理）
+Recent theoretical advances
+in nonequilibrium statistical physics have provided new tools to analyze
+climate variables, revealing signatures of underlying physical
+principles that govern climate fluctuations beyond simple mean values
+and linear correlations \cite{yin_nonequilibrium_2024}.
+
+% Evolution of Temperature-Precipitation Understanding: From Thermodynamics to Dynamics 
+The conceptual understanding of temperature-precipitation relationships
+has evolved considerably over recent decades. \citeauthor{allen2002constraints}
+first systematically established that global precipitation changes are
+primarily constrained by atmospheric energetics rather than simple
+moisture availability. Building on this foundation, \citeauthor{held2006robust}
+introduced the influential ``wet-gets-wetter'' mechanism, demonstrating
+how increased water vapor content under warming conditions intensifies
+existing precipitation patterns. The initial thermodynamic
+perspective---based primarily on Clausius-Clapeyron scaling---gradually
+expanded as \citeauthor{o2009physical} demonstrated that precipitation extremes
+depend on complex interactions between temperature lapse rates, upward
+velocities, and temperature distributions during extreme events.
+
+% Asymmetric Climate Fluctuations and Their Significance 
+Despite these advances, a growing body of evidence demonstrates that
+climate fluctuations exhibit pronounced asymmetry that conventional
+equilibrium-based frameworks fail to capture
+\cite{yin_nonequilibrium_2024}. Temperature and moisture distributions
+show marked skewness in their probability density functions (PDFs), with
+different characteristics for warming versus cooling episodes
+\cite{ruff2012long}. These asymmetries reflect fundamental properties of
+the climate system's response to perturbations and are particularly
+evident during extreme events and rapid transitions
+\cite{lucarini2012universal}.
+
+% Total Column Water Vapor: A Key Integrative Variable
+Total column water vapor (TCWV) represents an especially valuable
+variable for nonequilibrium analysis because it integrates both
+thermodynamic state (through Clausius-Clapeyron constraints) and dynamic
+processes (through atmospheric circulation patterns)
+\cite{held2006robust},\cite{o2010closely}. By analyzing TCWV fluctuations,
+we can gain insights into how thermodynamic and dynamic processes
+jointly determine precipitation patterns across different climate
+regimes. The ERA5 reanalysis dataset, with its unprecedented temporal
+resolution and extended coverage (1940-2024), provides a unique
+opportunity to characterize the full probability distribution of water
+vapor fluctuations rather than just their mean behavior
+\cite{era5_monthly_single_levels}.
+
+% Research Questions and Approach
+This study addresses three central questions: (1) How do probability
+density functions of TCWV fluctuations differ from those expected under
+equilibrium conditions? (2) What is the relationship between asymmetric
+TCWV fluctuations and vertical velocity patterns across different
+precipitation regimes? (3) How do these statistical properties vary
+across different climate regions and temporal scales? We hypothesize
+that TCWV fluctuations will exhibit pronounced asymmetries consistent
+with nonequilibrium behavior, particularly during extreme precipitation
+events.
+
+% Implications for Climate Understanding and Modeling
+To test these hypotheses, we develop a PDF-based methodology focusing on
+delta anomalies to characterize the temporal evolution of climate
+statistics. This approach allows us to identify universal scaling
+patterns while explicitly quantifying the relative contributions of
+thermodynamic and dynamic processes. By characterizing water vapor
+fluctuations from a nonequilibrium perspective, we provide a new
+framework that may help resolve persistent biases in precipitation
+forecasts, particularly for extreme events where equilibrium assumptions
+break down. Furthermore, by explicitly separating thermodynamic and
+dynamic contributions, our approach may provide new insights into how
+climate change will affect precipitation patterns through shifts in both
+moisture availability and atmospheric circulation, potentially enhancing
+our ability to represent the full spectrum of hydrological variability
+in a changing climate.
+
+
+\section{Data}\label{data}
+
+We utilize ERA5 reanalysis data obtained from the Copernicus Climate
+Change Service. The dataset covers the period 1940-2024 with monthly
+temporal resolution and spatial coverage of the entire globe. Key
+variables analyzed include:
+
+\begin{itemize}
+\item
+  Total column water vapor (TCWV)
+\item
+  Total precipitation (tp)
+\item
+  Vertical velocity (w) at multiple pressure levels (850, 500, and 250
+  hPa)
+\item
+  Surface temperature (t2m)
+\end{itemize}
+
+For precipitation-related variables, we convert units from meters to
+millimeters per month by multiplying by 1000 to facilitate
+interpretation. Vertical velocity is analyzed in Pa/s, with negative
+values indicating upward motion.
+
+\subsection{Calculation}\label{anomaly-calculation}
+
+Climate anomalies are calculated by removing the long-term
+climatological mean: \[A(t,x,y) = V(t,x,y) - \langle V(x,y)\rangle_{t}\]
+where \(V(t,x,y)\) represents the original variable, \(A(t,x,y)\) is the
+anomaly, and \(\langle \cdot \rangle_{t}\) denotes the temporal average.
+\protect\phantomsection\label{temporal-smoothing}{} We apply temporal
+smoothing using multiple timescales (\(\tau = 5,10,15,20\) years) to
+investigate multi-scale variability. The smoothing operation helps
+isolate long-term trends and reduces high-frequency noise.
+\protect\phantomsection\label{area-weighted-probability-density-function-analysis}{}
+To account for the spherical geometry of Earth, we implement area
+weighting using cosine of latitude: \(w(\phi) = \cos(\phi)\), where
+\(\phi\) represents latitude. Delta anomalies are calculated as:
+\(\Delta A(t,x,y) = A_{\mathrm{\text{smooth}}}(t,x,y) - A_{\mathrm{\text{smooth}}}(t_{0},x,y)\),
+where \(t_{0}\) represents the initial time period. Area-weighted
+histograms are computed to generate probability density functions for
+each time period and smoothing scale.
+\protect\phantomsection\label{asymmetry-analysis}{} To quantify
+nonequilibrium signatures in TCWV fluctuations, we calculate asymmetry
+metrics for the probability density functions:
+
+\[A_{\text{asym}} = \int_{- \infty}^{\infty}P(\Delta x)\ln(\frac{P(\Delta x)}{P( - \Delta x)})d(\Delta x)\]
+
+This metric measures the degree of time-reversal symmetry breaking, a
+fundamental property of nonequilibrium systems. For equilibrium systems,
+the fluctuations should be symmetric (\(A_{\text{asym}} = 0\)), while
+nonequilibrium systems exhibit non-zero values. We further examine
+conditional probabilities to investigate the coupling between variables:
+
+\[P\left( \mathrm{\text{Total precipitation}}~|~w,\mathrm{\text{TCWV}} \right)\]
+
+where \(w\) represents total precipitation. This allows us to separate
+the contributions of dynamic and thermodynamic processes to TCWV
+fluctuations.
+
+
+
+\section{Results}\label{results}
+
+Figure \ref{fig:pdf-tcwv} presents the PDF evolution for TCWV across multiple
+timescales. The analysis reveals several key features:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{../ERA5SLP/fig2/combined_figure_tcwv.png}
+\caption{(a) Global probability density functions (PDFs) of total column
+water vapor anomalies (\(A\)) across multiple temporal averaging windows
+(\(\tau\)), shown chronologically with color gradients from earlier
+(lighter) to later (darker) periods; (b) the evolution of mean
+(\(\mu\)), variance (\(\sigma^{2}\)), and asymmetry parameter
+(\(\Delta\beta\)) for short (\(\tau = 1\) year, blue) and long
+(\(\tau = 15\) years, red) averaging windows. Analysis is based on ERA5
+global reanalysis data from 1940 to 2024.}
+\label{fig:pdf-tcwv}{}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[ width=0.8\textwidth,keepaspectratio]{../ERA5SLP/fig6/combined_figure.png}
+
+\caption{Rescaling and symmetry of total precipitation fluctuations. The
+lines in (a) and (c) are rescaled from the PDFs of \(A\) and
+\(\Delta A\) in Figs. Figure \ref{fig:pdf-tcwv} The tails of these PDFs are
+linearly stretched to have a unit slope. The symmetry of the temperature
+fluctuations is evaluated by the ratio of positive and negative
+temperature fluctuations away from the mode against the differences of the
+exponents of the tails for (b) \(A\) and (d) \(\Delta A\). Results are
+based on ERA5.}
+\label{fig:tp-distribution}
+\end{figure}
+
+Figure \ref{fig:tp-distribution} is not determined to be inserted.
+
+% \section{Examples of citations, figures, tables, references}
+% \label{sec:others}
+% \lipsum[8] \cite{kour2014real,kour2014fast} and see \cite{hadash2018estimate}.
+
+% The documentation for \verb+natbib+ may be found at
+% \begin{center}
+%   \url{http://mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf}
+% \end{center}
+% Of note is the command \verb+\citet+, which produces citations
+% appropriate for use in inline text.  For example,
+% \begin{verbatim}
+%    \citet{hasselmo} investigated\dots
+% \end{verbatim}
+% produces
+% \begin{quote}
+%   Hasselmo, et al.\ (1995) investigated\dots
+% \end{quote}
+
+% \begin{center}
+%   \url{https://www.ctan.org/pkg/booktabs}
+% \end{center}
+
+
+% \subsection{Figures}
+% \lipsum[10] 
+% See Figure \ref{fig:fig1}. Here is how you add footnotes. \footnote{Sample of the first footnote.}
+% \lipsum[11] 
+
+% \begin{figure}
+%   \centering
+%   \fbox{\rule[-.5cm]{4cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+%   \caption{Sample figure caption.}
+%   \label{fig:fig1}
+% \end{figure}
+
+% \begin{figure} % picture
+%     \centering
+%     \includegraphics{test.png}
+% \end{figure}
+
+% \subsection{Tables}
+% \lipsum[12]
+% See awesome Table~\ref{tab:table}.
+
+% \begin{table}
+%  \caption{Sample table title}
+%   \centering
+%   \begin{tabular}{lll}
+%     \toprule
+%     \multicolumn{2}{c}{Part}                   \\
+%     \cmidrule(r){1-2}
+%     Name     & Description     & Size ($\mu$m) \\
+%     \midrule
+%     Dendrite & Input terminal  & $\sim$100     \\
+%     Axon     & Output terminal & $\sim$10      \\
+%     Soma     & Cell body       & up to $10^6$  \\
+%     \bottomrule
+%   \end{tabular}
+%   \label{tab:table}
+% \end{table}
+
+% \subsection{Lists}
+% \begin{itemize}
+% \item Lorem ipsum dolor sit amet
+% \item consectetur adipiscing elit. 
+% \item Aliquam dignissim blandit est, in dictum tortor gravida eget. In ac rutrum magna.
+% \end{itemize}
+
+
+\bibliographystyle{plainnat}  
+\bibliography{manuscript}  
+
+\end{document}
+

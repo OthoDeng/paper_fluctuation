@@ -35,7 +35,7 @@ Despite these advances, a growing body of evidence demonstrates that climate flu
 
 
 //Total Column Water Vapor: A Key Integrative Variable
-Total column water vapor (TCWV) represents an especially valuable variable for nonequilibrium analysis because it integrates both thermodynamic state (through Clausius-Clapeyron constraints) and dynamic processes (through atmospheric circulation patterns)  @held2006robust @o2010closely. By analyzing TCWV fluctuations, we can gain insights into how thermodynamic and dynamic processes jointly determine precipitation patterns across different climate regimes. 
+Total column water vapor (TCWV) represents an especially valuable variable for nonequilibrium analysis because it integrates both thermodynamic state (through Clausius-Clapeyron constraints) and dynamic processes (through atmospheric circulation patterns)  @held2006robust @o2010closely @pendergrass2017precipitation. By analyzing TCWV fluctuations, we can gain insights into how thermodynamic and dynamic processes jointly determine precipitation patterns across different climate regimes. 
 // Leveraging Modern Reanalysis for Novel Statistical Approaches
 The ERA5 reanalysis dataset, with its unprecedented temporal resolution and extended coverage (1940-2024), provides a unique opportunity to characterize the full probability distribution of water vapor fluctuations rather than just their mean behavior @era5_monthly_single_levels.
 
@@ -52,7 +52,18 @@ To test these hypotheses, we develop a PDF-based methodology focusing on delta a
 This approach allows us to identify universal scaling patterns while explicitly quantifying the relative contributions of thermodynamic and dynamic processes. By characterizing water vapor fluctuations from a nonequilibrium perspective, we provide a new framework that may help resolve persistent biases in precipitation forecasts, particularly for extreme events where equilibrium assumptions break down. Furthermore, by explicitly separating thermodynamic and dynamic contributions, our approach may provide new insights into how climate change will affect precipitation patterns through shifts in both moisture availability and atmospheric circulation, potentially enhancing our ability to represent the full spectrum of hydrological variability in a changing climate.
 
 
+#pagebreak()
 
+
+Earth's climate system operates far from thermodynamic equilibrium @kleidon2016thermodynamic, with atmospheric water playing a crucial role through phase transitions and energy redistribution @marconi_fluctuationdissipation_2008. While nonequilibrium statistical physics has revealed new insights into climate fluctuations @yin_nonequilibrium_2024, conventional frameworks often overlook critical asymmetries.
+
+Temperature-precipitation understanding has evolved from thermodynamic constraints @allen2002constraints to dynamic mechanisms like "wet-gets-wetter, dry-gets-drier" (WGWDGD) @held2006robust and complex interactions during extreme events @o2009physical. However, emerging evidence shows pronounced asymmetry in climate fluctuations that equilibrium-based frameworks cannot capture @yin_nonequilibrium_2024, particularly evident in skewed temperature and moisture distributions @ruff2012long and during extreme events @lucarini2012universal.
+
+Total column water vapor (TCWV) serves as a key integrative variable that bridges thermodynamic state and dynamic processes @held2006robust @o2010closely @pendergrass2017precipitation. The ERA5 reanalysis dataset's high temporal resolution enables characterization of complete probability distributions of water vapor fluctuations beyond mean behavior @era5_monthly_single_levels.
+
+This study examines: (1) how TCWV fluctuation probability densities deviate from equilibrium expectations; (2) the relationship between asymmetric TCWV fluctuations and vertical velocity across precipitation regimes; and (3) how these statistical properties vary regionally and temporally. We hypothesize TCWV fluctuations exhibit nonequilibrium asymmetries, especially during extreme precipitation.
+
+Our PDF-based methodology focuses on delta anomalies to characterize climate statistics' temporal evolution. This approach identifies universal scaling patterns while quantifying thermodynamic and dynamic process contributions, potentially resolving precipitation forecast biases and enhancing understanding of how climate change affects precipitation through shifts in both moisture availability and atmospheric circulation.
 
 
 = Materials and Methods
@@ -60,7 +71,7 @@ This approach allows us to identify universal scaling patterns while explicitly 
 We investigated the relationship between sea surface temperature (SST) and total column water vapor (TCWV), as well as the combined effect of TCWV and vertical wind speed on precipitation (TP). The regression analysis yields a slope of 0.0645 $K^(-1)$ for the SST-TCWV relationship, which is highly consistent with the theoretical Clausius-Clapeyron scaling ($\~ 0.07 K^(-1)$)@held2006robust, and a high $R^2$ of 0.95, indicating that SST almost entirely controls TCWV via thermodynamic processes .
 
 
-For the TP-TCWV-w relationship, the regression explains approximately 43% of the precipitation variance ($R^2$ = 0.43), with TCWV exerting a strong and significant positive effect, while the vertical wind speed shows a significant negative coefficient, possibly due to data conventions or regional circulation effects.
+For the TP-TCWV-w relationship, the regression explains approximately 43% of the precipitation variance ($R^2$ = 0.43)(See @fig:ols-regression), with TCWV exerting a strong and significant positive effect, while the vertical wind speed shows a significant negative coefficient, possibly due to data conventions or regional circulation effects.
 
 Notably, when restricting the analysis to the lowest 59% of years in terms of precipitation (i.e., excluding extreme wet years), the observed-versus-predicted scatter of TCWV versus TP exhibits an even tighter alignment, suggesting that precipitation in 'normal' years is more tightly governed by thermodynamic and dynamic controls, whereas extreme precipitation events may be driven by additional processes.
 
@@ -251,8 +262,42 @@ using the provided methodology and publicly available ERA5 data.
 We acknowledge the European Centre for Medium-Range Weather Forecasts
 (ECMWF) and the Copernicus Climate Change Service (C3S) for providing
 the ERA5 reanalysis data. K.D. acknowledges support from Nanjing
-University of Information Science and Technology. We thank the anonymous
-reviewers for their constructive comments that improved this manuscript.
+University of Information Science and Technology. We thank the anonymous reviewers for their constructive comments that improved this manuscript.
 
 
-#bibliography("manuscript.bib",style:"american-psychological-association")
+#bibliography("manuscript.bib",style:"nature")
+
+= Appendix
+<appendix>
+
+#figure(
+  ```
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.448
+Model:                            OLS   Adj. R-squared:                  0.448
+Method:                 Least Squares   F-statistic:                 3.575e+07
+Date:                Wed, 09 Jul 2025   Prob (F-statistic):               0.00
+Log-Likelihood:             4.4450e+08  Covariance Type:            nonrobust   
+No. Observations:            88250400   AIC:                        -8.890e+08
+Df Residuals:                88250397   BIC:                        -8.890e+08
+Df Model:                           2                                         
+                                      
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0006   2.81e-07   2164.471      0.000       0.001       0.001
+x1          9.733e-05   1.19e-08   8194.911      0.000    9.73e-05    9.74e-05
+x2            -0.0002   1.69e-06   -141.165      0.000      -0.000      -0.000
+==============================================================================
+Omnibus:                 55871018.306   Durbin-Watson:                   0.059
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):       5855833638.237
+Skew:                           2.178   Prob(JB):                         0.00
+Kurtosis:                      42.668   Cond. No.                         235.
+==============================================================================
+
+  ```,
+  caption: [
+    Ordinary Least Squares (OLS) regression results for the relationship between total column water vapor (TCWV) and sea surface temperature (SST) and vertical wind speed (w). The model explains approximately 44.8% of the variance in TCWV, with a highly significant relationship to SST and a negative coefficient for vertical wind speed.
+  ]
+)<fig:ols-regression>
