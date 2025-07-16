@@ -153,7 +153,9 @@ Analysis of TCWV probability density functions reveals pronounced asymmetric fea
 These features distinguish TCWV from mere passive tracers and indicate its active role in climate dynamics, driven by the interplay between thermodynamic constraints and atmospheric circulation.
 
 == Rescaling and Symmetry 
-To quantify the nonequilibrium signatures in TCWV fluctuations, we employ a rescaling analysis based on fluctuation relations @Evans01112002 @marconi_fluctuationdissipation_2008. The fundamental insight is that nonequilibrium systems exhibit asymmetric fluctuation probabilities that encode information about underlying dissipative processes.
+To quantify the nonequilibrium signatures in 
+precipitation
+fluctuations, we employ a rescaling analysis based on fluctuation relations @Evans01112002 @marconi_fluctuationdissipation_2008. The fundamental insight is that nonequilibrium systems exhibit asymmetric fluctuation probabilities that encode information about underlying dissipative processes.
 
 Following large deviation theory, we characterize the asymmetry through the logarithmic ratio of positive to negative fluctuations at distance $alpha$ from the mode:
 #figure(
@@ -167,6 +169,8 @@ Following large deviation theory, we characterize the asymmetry through the loga
 )<eq.asymmetry>
 
 where $Delta beta = beta_1 - beta_2$ quantifies the asymmetry in tail exponents. This relationship directly connects observable statistical asymmetries to the irreversibility inherent in nonequilibrium processes.
+
+The results, shown in @fig:rescaling-and-symmetry b and d, demonstrate that the theoretical framework originally developed for temperature fluctuations @yin_nonequilibrium_2024 extends successfully to precipitation analysis. The warming-to-cooling ratio, governed by @eq.asymmetry, increases for stronger asymmetric distributions (e.g., longer time differences and more recent years), confirming that the nonequilibrium signatures observed in temperature @yin_nonequilibrium_2024 are also manifest in precipitation dynamics. This transferability of the theoretical framework highlights the universal nature of nonequilibrium fluctuation patterns across different climate variables, with precipitation exhibiting similar asymmetric behavior that encodes information about underlying dissipative processes in the climate system.
 
 To test this theoretical framework, we rescale the probability distributions using the empirically determined exponents:
 #figure(
@@ -188,7 +192,7 @@ Under this transformation, the theoretical prediction becomes:
 exhibiting unit slopes for both tails. The successful collapse of empirical distributions onto this universal form (@fig:rescaling-and-symmetry a,c) validates our theoretical approach and demonstrates that TCWV fluctuations can be completely characterized by three parameters: the two tail exponents and the mode position.
 
 This rescaling analysis provides compelling evidence for the nonequilibrium nature of atmospheric water vapor dynamics, revealing universal scaling properties that transcend specific climate regimes while maintaining sensitivity to the underlying physical processes that drive asymmetric fluctuations.
-
+//
 
 
 The results are shown in @fig:rescaling-and-symmetry, where the
