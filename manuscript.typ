@@ -28,14 +28,14 @@ Earth's climate system operates far from thermodynamic equilibrium, driven by di
 Recent theoretical advances in nonequilibrium statistical physics have provided new tools to analyze climate variables, revealing signatures of underlying physical principles that govern climate fluctuations beyond simple mean values and linear correlations @yin_nonequilibrium_2024. 
 
 // Evolution of Temperature-Precipitation Understanding: From Thermodynamics to Dynamics 
-The conceptual understanding of temperature-precipitation relationships has evolved considerably over recent decades. #cite(<allen2002constraints>,form: "prose")  first systematically established that global precipitation changes are primarily constrained by atmospheric energetics rather than simple moisture availability. Building on this foundation, #cite(<held2006robust>,form: "prose") introduced the influential "wet-gets-wetter" mechanism, demonstrating how increased water vapor content under warming conditions intensifies existing precipitation patterns. The initial thermodynamic perspective—based primarily on Clausius-Clapeyron scaling—gradually expanded as #cite(<o2009physical>,form: "prose",) demonstrated that precipitation extremes depend on complex interactions between temperature lapse rates, upward velocities, and temperature distributions during extreme events.
+The conceptual understanding of temperature-precipitation relationships has evolved considerably over recent decades. #cite(<allen2002constraints>,form: "prose")  first systematically established that global precipitation changes are primarily constrained by atmospheric energetics rather than simple moisture availability. Building on this foundation, #cite(<held2006robust>,form: "prose") introduced the influential "wet-gets-wetter, dry-gets-drier" mechanism (WGWDGD), demonstrating how increased water vapor content under warming conditions intensifies existing precipitation patterns. The initial thermodynamic perspective—based primarily on Clausius-Clapeyron scaling—gradually expanded as #cite(<o2009physical>,form: "prose",) demonstrated that precipitation extremes depend on complex interactions between temperature lapse rates, upward velocities, and temperature distributions during extreme events.
 
 // Asymmetric Climate Fluctuations and Their Significance 
 Despite these advances, a growing body of evidence demonstrates that climate fluctuations exhibit pronounced asymmetry that conventional equilibrium-based frameworks fail to capture @yin_nonequilibrium_2024. Temperature and moisture distributions show marked skewness in their probability density functions (PDFs), with different characteristics for warming versus cooling episodes @ruff2012long. These asymmetries reflect fundamental properties of the climate system's response to perturbations and are particularly evident during extreme events and rapid transitions @lucarini2012universal.
 
 
 //Total Column Water Vapor: A Key Integrative Variable
-Total column water vapor (TCWV) represents an especially valuable variable for nonequilibrium analysis because it integrates both thermodynamic state (through Clausius-Clapeyron constraints) and dynamic processes (through atmospheric circulation patterns)  @held2006robust @o2010closely @pendergrass2017precipitation. By analyzing TCWV fluctuations, we can gain insights into how thermodynamic and dynamic processes jointly determine precipitation patterns across different climate regimes. 
+Total column water vapor (TCWV) represents an especially valuable variable for nonequilibrium analysis because it integrates both thermodynamic state (through Clausius-Clapeyron constraints) and dynamic processes (through atmospheric circulation patterns)  @held2006robust @o2010closely @pendergrass2017precipitation @tompkins2025drivers @holloway2010temporal. By analyzing TCWV fluctuations, we can gain insights into how thermodynamic and dynamic processes jointly determine precipitation patterns across different climate regimes. 
 // Leveraging Modern Reanalysis for Novel Statistical Approaches
 The ERA5 reanalysis dataset, with its unprecedented temporal resolution and extended coverage (1940-2024), provides a unique opportunity to characterize the full probability distribution of water vapor fluctuations rather than just their mean behavior @era5_monthly_single_levels.
 
@@ -52,19 +52,6 @@ To test these hypotheses, we develop a PDF-based methodology focusing on delta a
 This approach allows us to identify universal scaling patterns while explicitly quantifying the relative contributions of thermodynamic and dynamic processes. By characterizing water vapor fluctuations from a nonequilibrium perspective, we provide a new framework that may help resolve persistent biases in precipitation forecasts, particularly for extreme events where equilibrium assumptions break down. Furthermore, by explicitly separating thermodynamic and dynamic contributions, our approach may provide new insights into how climate change will affect precipitation patterns through shifts in both moisture availability and atmospheric circulation, potentially enhancing our ability to represent the full spectrum of hydrological variability in a changing climate.
 
 
-#pagebreak()
-
-
-Earth's climate system operates far from thermodynamic equilibrium @kleidon2016thermodynamic, with atmospheric water playing a crucial role through phase transitions and energy redistribution @marconi_fluctuationdissipation_2008. While nonequilibrium statistical physics has revealed new insights into climate fluctuations @yin_nonequilibrium_2024, conventional frameworks often overlook critical asymmetries.
-
-Temperature-precipitation understanding has evolved from thermodynamic constraints @allen2002constraints to dynamic mechanisms like "wet-gets-wetter, dry-gets-drier" (WGWDGD) @held2006robust and complex interactions during extreme events @o2009physical. However, emerging evidence shows pronounced asymmetry in climate fluctuations that equilibrium-based frameworks cannot capture @yin_nonequilibrium_2024, particularly evident in skewed temperature and moisture distributions @ruff2012long and during extreme events @lucarini2012universal.
-
-Total column water vapor (TCWV) serves as a key integrative variable that bridges thermodynamic state and dynamic processes @held2006robust @o2010closely @pendergrass2017precipitation. The ERA5 reanalysis dataset's high temporal resolution enables characterization of complete probability distributions of water vapor fluctuations beyond mean behavior @era5_monthly_single_levels.
-
-This study examines: (1) how TCWV fluctuation probability densities deviate from equilibrium expectations; (2) the relationship between asymmetric TCWV fluctuations and vertical velocity across precipitation regimes; and (3) how these statistical properties vary regionally and temporally. We hypothesize TCWV fluctuations exhibit nonequilibrium asymmetries, especially during extreme precipitation.
-
-Our PDF-based methodology focuses on delta anomalies to characterize climate statistics' temporal evolution. This approach identifies universal scaling patterns while quantifying thermodynamic and dynamic process contributions, potentially resolving precipitation forecast biases and enhancing understanding of how climate change affects precipitation through shifts in both moisture availability and atmospheric circulation.
-
 
 = Materials and Methods
 <materials-and-methods>
@@ -77,10 +64,9 @@ Notably, when restricting the analysis to the lowest 59% of years in terms of pr
 
 #figure(image("../ERA5SLP/fig2/sst_tcwv_comparison.png", width: 75.0%),
   caption: [
-  Observed versus predicted total column water vapor (TCWV) based on sea surface temperature (SST), and precipitation (TP) based on TCWV and vertical wind speed (w), for the lowest 59% of precipitation years.
-(a) TCWV shows a nearly linear relationship with SST, following the Clausius-Clapeyron rate (observed slope: $0.0645 K^(-1)$ , $R^2 = 0.95$).
-(b) TP predicted from TCWV and w captures approximately 43% of the observed variance ($R^2 = 0.95$), with the fit being tighter when extreme precipitation years are excluded, indicating enhanced thermodynamic and dynamic control during normal years.
-The results highlight the dominant role of thermodynamics in determining water vapor content, and the joint thermodynamic and dynamic regulation of precipitation, especially outside extreme event periods.
+  Observed vs. predicted TCWV (from SST) and TP (from TCWV and w) for the wettest 59% of years. TCWV closely follows Clausius-Clapeyron scaling ($0.0645\,K^(-1)$, $R^2=0.95$).
+// (b) TP predicted from TCWV and w captures approximately 43% of the observed variance ($R^2 = 0.95$), with the fit being tighter when extreme precipitation years are excluded, indicating enhanced thermodynamic and dynamic control during normal years.
+// The results highlight the dominant role of thermodynamics in determining water vapor content, and the joint thermodynamic and dynamic regulation of precipitation, especially outside extreme event periods.
   ]
 )
 = Data
@@ -166,30 +152,58 @@ Analysis of TCWV probability density functions reveals pronounced asymmetric fea
 
 These features distinguish TCWV from mere passive tracers and indicate its active role in climate dynamics, driven by the interplay between thermodynamic constraints and atmospheric circulation.
 
-The asymmetry of the distribution with the growth of positive fluctuations at the expense of the negative ones is strongly reminiscent of the symmetry implied by the fluctuation theorem @Evans01112002.
-$
+== Rescaling and Symmetry 
+To quantify the nonequilibrium signatures in TCWV fluctuations, we employ a rescaling analysis based on fluctuation relations @Evans01112002 @marconi_fluctuationdissipation_2008. The fundamental insight is that nonequilibrium systems exhibit asymmetric fluctuation probabilities that encode information about underlying dissipative processes.
+
+Following large deviation theory, we characterize the asymmetry through the logarithmic ratio of positive to negative fluctuations at distance $alpha$ from the mode:
+#figure(
+  $
     ln[
       (f(alpha + m)) / f(-alpha + m)
     ]
     = 
     alpha Delta beta (beta_1 beta_2)^(-1)
-$<eq.asymmetry>
+  $
+)<eq.asymmetry>
 
-The results are shown in @fig:tp-distribution, where the
+where $Delta beta = beta_1 - beta_2$ quantifies the asymmetry in tail exponents. This relationship directly connects observable statistical asymmetries to the irreversibility inherent in nonequilibrium processes.
+
+To test this theoretical framework, we rescale the probability distributions using the empirically determined exponents:
+#figure(
+  $
+    overline(x) = cases(
+      (x - m)\/beta_1 quad "for" x > m,
+      (x - m)\/beta_2 quad "for" x < m
+    ),
+  $
+)<eq.rescaling>
+
+Under this transformation, the theoretical prediction becomes:
+#figure(
+  $
+    f(overline(x)) = beta_0 exp(-abs(overline(x)))
+  $
+)<eq.scaled-pdf>
+
+exhibiting unit slopes for both tails. The successful collapse of empirical distributions onto this universal form (@fig:rescaling-and-symmetry a,c) validates our theoretical approach and demonstrates that TCWV fluctuations can be completely characterized by three parameters: the two tail exponents and the mode position.
+
+This rescaling analysis provides compelling evidence for the nonequilibrium nature of atmospheric water vapor dynamics, revealing universal scaling properties that transcend specific climate regimes while maintaining sensitivity to the underlying physical processes that drive asymmetric fluctuations.
+
+
+
+The results are shown in @fig:rescaling-and-symmetry, where the
 
 From the @eq.asymmetry equation, we can see that the asymmetry metric $A_("asym")$ is related to the ratio of the positive and negative fluctuation distributions, scaled by the mean and variance of the distribution. This relationship highlights how the asymmetry in TCWV fluctuations can be quantitatively assessed through statistical measures.
 
 
-#figure(image("../ERA5SLP/fig6/combined_figure.png"),
+#figure(image("../ERA5SLP/fig6/combined_figure_alt.png"),
   caption: [
- Rescaling and symmetry of total precipitation fluctuations. The lines in (a) and (c) are rescaled from the PDFs of
-$A$ and $Delta A$ in
-Figs. @fig:pdf-tcwv
+ Rescaling of u-component wind and symmetry of total precipitation fluctuations. The lines in (a) and (c) are rescaled from the PDFs of
+$A$ and $Delta A$.
 The tails of these PDFs are linearly stretched to have a unit slope.
-The symmetry of the temperature uctuations is evaluated by the ratio of positive and negative temperature uctuations away from the mode against the differences of the exponents of the tails for (b) $A$ and (d) $Delta A$. Results are based on ERA5.
+The symmetry of the temperature fluctuations is evaluated by the ratio of positive and negative temperature uctuations away from the mode against the differences of the exponents of the tails for (b) $A$ and (d) $Delta A$. Results are based on ERA5.
   ]
-)
-<fig:tp-distribution>
+)<fig:rescaling-and-symmetry>
 == Coupling Between TCWV, Vertical Velocity, and Precipitation
 <coupling-analysis>
 
@@ -298,6 +312,6 @@ Kurtosis:                      42.668   Cond. No.                         235.
 
   ```,
   caption: [
-    Ordinary Least Squares (OLS) regression results for the relationship between total column water vapor (TCWV) and sea surface temperature (SST) and vertical wind speed (w). The model explains approximately 44.8% of the variance in TCWV, with a highly significant relationship to SST and a negative coefficient for vertical wind speed.
+    OLS regression summary for TCWV as a function of SST and vertical wind speed (w). SST shows a strong positive effect consistent with Clausius-Clapeyron scaling; w has a significant negative coefficient. The model explains 44.8% of TCWV variance.
   ]
 )<fig:ols-regression>
