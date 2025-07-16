@@ -202,10 +202,7 @@ From the @eq.asymmetry equation, we can see that the asymmetry metric $A_("asym"
 
 #figure(image("../ERA5SLP/fig6/combined_figure_alt.png"),
   caption: [
- Rescaling of u-component wind and symmetry of total precipitation fluctuations. The lines in (a) and (c) are rescaled from the PDFs of
-$A$ and $Delta A$.
-The tails of these PDFs are linearly stretched to have a unit slope.
-The symmetry of the temperature fluctuations is evaluated by the ratio of positive and negative temperature uctuations away from the mode against the differences of the exponents of the tails for (b) $A$ and (d) $Delta A$. Results are based on ERA5.
+Rescaling analysis of wind speed fluctuations (dynamics): (a, c) PDFs of wind speed anomalies are rescaled so both tails collapse onto a universal form, demonstrating universal nonequilibrium scaling in atmospheric dynamics. Asymmetry analysis of precipitation fluctuations (thermodynamics): (b, d) The logarithmic ratio of positive to negative precipitation anomalies quantifies systematic time-reversal symmetry breaking, highlighting nonequilibrium thermodynamic signatures. Results are based on ERA5 global reanalysis data.
   ]
 )<fig:rescaling-and-symmetry>
 == Coupling Between TCWV, Vertical Velocity, and Precipitation
