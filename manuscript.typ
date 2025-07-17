@@ -11,9 +11,13 @@ Nonequilibrium Signatures in Total Column Water Vapor Fluctuations Across Climat
 
 The statistical properties of atmospheric water vapor reveal fundamental insights into Earth's nonequilibrium climate system. This study analyzes the probability density functions (PDFs) of total column water vapor (TCWV) fluctuations using ERA5 reanalysis data spanning 1940-2024. Our multi-scale temporal analysis reveals that TCWV exhibits asymmetric statistical properties characteristic of nonequilibrium systems, similar to but more pronounced than those observed in temperature fluctuations. We demonstrate that these asymmetries result from the coupling between thermodynamic (water vapor content) and dynamic (vertical motion) processes. The PDF analysis further reveals systematic changes in extreme water vapor events over the 85-year period, with implications for understanding precipitation variability in a warming climate. Our findings establish universal scaling patterns in TCWV fluctuations that transcend different climate regimes and provide a novel framework for evaluating hydrological cycle intensification.
 
+没改
+
 #heading(level: 1, numbering: none)[Plain Language Summary]
 <plain-language-summary>
 Water vapor is the most abundant greenhouse gas and plays a critical role in Earth's climate system. This study examines how water vapor fluctuates in the atmosphere over different time periods and regions. We find that the statistical patterns of these fluctuations reveal important properties of Earth's climate as a system that is constantly exchanging energy. Just as temperature fluctuations show asymmetries that reveal non-equilibrium properties, total column water vapor fluctuations exhibit similar but even more pronounced patterns. These patterns arise from the interaction between water vapor and vertical air motion. Our research helps explain how climate change affects extreme precipitation events and provides new ways to understand the intensification of the global water cycle.
+
+没改
 
 #set heading(numbering: "1.1")
 
@@ -62,6 +66,8 @@ For the TP-TCWV-w relationship, the regression explains approximately 43% of the
 
 Notably, when restricting the analysis to the lowest 59% of years in terms of precipitation (i.e., excluding extreme wet years), the observed-versus-predicted scatter of TCWV versus TP exhibits an even tighter alignment, suggesting that precipitation in 'normal' years is more tightly governed by thermodynamic and dynamic controls, whereas extreme precipitation events may be driven by additional processes.
 
+有待修改
+
 #figure(image("../ERA5SLP/fig2/sst_tcwv_comparison.png", width: 75.0%),
   caption: [
   Observed vs. predicted TCWV (from SST) and TP (from TCWV and w) for the wettest 59% of years. TCWV closely follows Clausius-Clapeyron scaling ($0.0645\,K^(-1)$, $R^2=0.95$).
@@ -79,6 +85,8 @@ We utilize ERA5 reanalysis data obtained from the Copernicus Climate Change Serv
 - Surface temperature (t2m) //Sea surface tempertature?
 
 For precipitation-related variables, we convert units from meters to millimeters per month by multiplying by 1000 to facilitate interpretation. Vertical velocity is analyzed in Pa/s, with negative values indicating upward motion.
+
+没编写
 
 == Calculation
 <anomaly-calculation>
@@ -152,6 +160,8 @@ Analysis of TCWV probability density functions reveals pronounced asymmetric fea
 
 These features distinguish TCWV from mere passive tracers and indicate its active role in climate dynamics, driven by the interplay between thermodynamic constraints and atmospheric circulation.
 
+没编完
+
 == Rescaling and Symmetry 
 To quantify the nonequilibrium signatures in 
 precipitation
@@ -189,15 +199,11 @@ Under this transformation, the theoretical prediction becomes:
   $
 )<eq.scaled-pdf>
 
-exhibiting unit slopes for both tails. The successful collapse of empirical distributions onto this universal form (@fig:rescaling-and-symmetry a,c) validates our theoretical approach and demonstrates that TCWV fluctuations can be completely characterized by three parameters: the two tail exponents and the mode position.
+exhibiting unit slopes for both tails. The successful collapse of empirical distributions onto this universal form (@fig:rescaling-and-symmetry a,c) validates our theoretical approach and demonstrates that wind fluctuations can be completely characterized by three parameters: the two tail exponents and the mode position.
 
-This rescaling analysis provides compelling evidence for the nonequilibrium nature of atmospheric water vapor dynamics, revealing universal scaling properties that transcend specific climate regimes while maintaining sensitivity to the underlying physical processes that drive asymmetric fluctuations.
+This rescaling analysis provides compelling evidence for the nonequilibrium nature of thermodynamics and dynamics, revealing universal scaling properties that transcend specific climate regimes while maintaining sensitivity to the underlying physical processes that drive asymmetric fluctuations.
 //
 
-
-The results are shown in @fig:rescaling-and-symmetry, where the
-
-From the @eq.asymmetry equation, we can see that the asymmetry metric $A_("asym")$ is related to the ratio of the positive and negative fluctuation distributions, scaled by the mean and variance of the distribution. This relationship highlights how the asymmetry in TCWV fluctuations can be quantitatively assessed through statistical measures.
 
 
 #figure(image("../ERA5SLP/fig6/combined_figure_alt.png"),
